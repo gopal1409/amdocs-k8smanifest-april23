@@ -6,12 +6,12 @@ metadata:
   name: webserver-multi ##3it should create an pod using metadata and name we are creating a pod
 spec: #this is the specification for your pod
   containers: ##inside pod we want to create a container
-    - name: webserver ##this is name of the container
-      image: nginx:1.14.2 ##the container will be created with image by default it will go to hub.docker.com and download the image
+  - name: webserver ##this is name of the container
+    image: nginx:1.14.2 ##the container will be created with image by default it will go to hub.docker.com and download the image
       ##image: http://aws.ec.com./nameoftherepo/nginx:1.12
       ##image: http://nexus-ip/_v2/image/nginx 
-      #ports: #we have define the por on which the container is going to run
-       # - containerPort: 80 
-    -  image: httpd
-       name: httpd
+      ports: #we have define the por on which the container is going to run
+        - containerPort: 80 
+  - image: httpd
+    name: httpd
        
