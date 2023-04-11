@@ -12,8 +12,5 @@ spec: #this is the specification for your pod
       ##image: http://nexus-ip/_v2/image/nginx 
       ports: #we have define the por on which the container is going to run
         - containerPort: 80 
-    -  name: consul
-       image: consul 
-
-    -  name: httpd
-       image: httpd
+    -  image: httpd
+       name: httpd
