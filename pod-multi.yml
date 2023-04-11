@@ -11,12 +11,9 @@ spec: #this is the specification for your pod
       ##image: http://aws.ec.com./nameoftherepo/nginx:1.12
       ##image: http://nexus-ip/_v2/image/nginx 
       ports: #we have define the por on which the container is going to run
-        - containerPort: 80 ###container port as 80
+        - containerPort: 80 
+      name: consul
+      image: consul 
 
-        ###it is mapped with application properties. 
-        ##3expose 
-        
-        ##to apply an manifest file
-        ##kubectl apply -f nameofthemanifest.yaml
-        ##kubectl create
-        ##3kubectl delete
+      name: httpd
+      image: httpd
