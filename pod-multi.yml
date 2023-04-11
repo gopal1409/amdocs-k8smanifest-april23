@@ -8,6 +8,6 @@ spec: #this is the specification for your pod
   containers: ##inside pod we want to create a container
   - name: webserver ##this is name of the container
     image: nginx:1.14.2 ##the container will be created with image by default it will go to hub.docker.com and download the image 
-  - image: httpd
-    name: httpd
+  - image: busybox
+    name: busybox
        
