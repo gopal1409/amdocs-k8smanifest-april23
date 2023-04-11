@@ -3,7 +3,7 @@
 apiVersion: v1 ####all the communication to your kubernetes cluster happen using api
 kind: Pod ##3pod is an api or i can generalized term for your api to 
 metadata:
-  name: webserver ##3it should create an pod using metadata and name we are creating a pod
+  name: webserver-multi ##3it should create an pod using metadata and name we are creating a pod
 spec: #this is the specification for your pod
   containers: ##inside pod we want to create a container
     - name: webserver ##this is name of the container
