@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: pod-replica
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      
