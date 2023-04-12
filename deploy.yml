@@ -1,22 +1,26 @@
+##we will invoke an api deployment api
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
+  ###deployment name should be unique label can be similar
+  labels: #the purpose of the label is to map your deployment with your pod. 
     app: nginx 
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
+   # gopal: das
+spec: #this is the specification for your deployment
+  replicas: 3 ###inside your deployment it shoudl create three pod
+  selector: ##3selector matchlabel exporess. similar to match expressing using the same
+  ##3same all my pod will have this lable
+    matchLabels: #match label shoudl al,ways be satisifed in order to match all the pod against your deployment
       app: nginx 
-  template:
-    metadata:
-      labels:
+  template: #inside the pod i want to deploy an container so we need to define our container defination
+  ####to define our container defination as an template
+    metadata: #this template block need to be deployed inside your pod
+      labels: ##same label has been define
         app: nginx 
-    spec:
+    spec: #this is the contianer whcich is going to be deployed in all the pod
       containers:
       - name: nginx 
         image: nginx:1.14.2
-        
         ports:
         - containerPort: 80
