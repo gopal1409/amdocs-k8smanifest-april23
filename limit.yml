@@ -4,7 +4,7 @@ metadata:
   name: mem-limit-range
 spec:
   limits:
-    - default:
+  - default:
         memory: 512Mi ##3inside the name space i have 512 MB allocate
     defaultRequest:
       memory: 256Mi ##but none of the container can use more than 256MB
