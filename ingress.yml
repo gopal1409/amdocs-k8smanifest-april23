@@ -46,15 +46,14 @@ spec:
             port:
 
               number: 80
-      - path: /usermgmt-webapp
-
+      - path: /usermgmt-webapp-clusterip-service
         pathType: Prefix
 
         backend:
 
           service:
 
-            name: usermgmt-webapp
+            name: usermgmt-webapp-clusterip-service
 
             port:
 
