@@ -46,7 +46,7 @@ spec:
             port:
 
               number: 80
-      - path: /usermgmt-webapp
+      - path: /login
 
         pathType: Prefix
 
