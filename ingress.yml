@@ -54,7 +54,7 @@ spec:
 
           service:
 
-            name: /usermgmt-webapp
+            name: usermgmt-webapp
 
             port:
 
