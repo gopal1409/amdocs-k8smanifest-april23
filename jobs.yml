@@ -4,6 +4,9 @@ metadata:
   name: node-app-job 
 spec:
   completions: 2
+  parallelism: 2
+  backoffLimit: 2
+  activeDeadlineSeconds: 15
   template:
     spec:
       containers:
