@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-app-deployment
+  labels:
+    app: note-sample-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: note-sample-app
+  template:
+    metadata:
+      labels:
+        app: note-sample-app
+    spec:
+      containers:
+      - name: note-sample-app-container
+        image: pavansa/note-sample-app
+        ports:
+        - containerPort: 3000
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 3000 
+      livenessProbe:
+        httpGet:
+          path: / 
+          port: 3000
+        intialDelaySeconds: 30
+        periodSeconds: 10 
+        timeoutSeconds: 5
