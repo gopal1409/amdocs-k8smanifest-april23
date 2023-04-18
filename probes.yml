@@ -26,7 +26,8 @@ spec:
         livenessProbe:
           httpGet:
             path: / 
-            port: 3000
+            port: 3001
+            ##3it will do get request three time. 
           initialDelaySeconds: 30
           periodSeconds: 10 
           timeoutSeconds: 5
