@@ -1,0 +1,11 @@
+##mkdir dir
+mkdir /mnt/data1
+###deploy the secret pv and pvc manifesth
+ 190  git pull
+  191  kubectl apply -f state-secret.yml
+  192  kubectl get secret
+
+  197  kubectl apply -f state-pv.yml
+  198  kubectl get pv
+  199  kubectl apply -f state-pvc.yml
+  200  kubectl get pvc
