@@ -5,7 +5,8 @@ metadata:
   namespace: quota-demo
 spec:
   containers:
-    - image: busybox 
+    - name: quota-test
+      image: busybox 
       command: ['sh','c','echo pod is running ; sleep 5000']
       resources:
         requests:
