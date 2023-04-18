@@ -19,14 +19,14 @@ spec:
         image: pavansa/note-sample-app
         ports:
         - containerPort: 3000
-      readinessProbe:
-        httpGet:
-          path: /
-          port: 3000 
-      livenessProbe:
-        httpGet:
-          path: / 
-          port: 3000
-        intialDelaySeconds: 30
-        periodSeconds: 10 
-        timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000 
+        livenessProbe:
+          httpGet:
+            path: / 
+            port: 3000
+          intialDelaySeconds: 30
+          periodSeconds: 10 
+          timeoutSeconds: 5
