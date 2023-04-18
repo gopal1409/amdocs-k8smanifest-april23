@@ -27,7 +27,7 @@ spec:
             valueFrom:
               secretKeyRef: 
               ##3this name come from 
-                name: mysql-db-password1 
+                name: mysql-db-password-1
                 key: password
         ports:
         - containerPort: 3306
