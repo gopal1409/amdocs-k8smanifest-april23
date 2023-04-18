@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet 
+metadata:
+  name: mysql 
+  labels:
+    app: mysql 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mysql 
+##3upto line 11 it will invoke an deployment api inside the deployment api we will add
+##3the pod with an lable app: mysql 
+#inside the pod we are going to create a template which create an container for you
+  template:
+    metadata:
+      labels:
+        app: mysql 
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mysql 
+        image: mysql:5.6
+        ##3we will provide an environment varaible 
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef: 
+              ##3this name come from 
+                name: mysql-db-password1 
+                key: password
+        ports:
+        - containerPort: 3306
+        ##now we will define volumeMount 
+        ##3this volume mount block is for container
+        volumeMounts:
+          - name: mysql-data-1
+            mountPath: /var/lib/mysql
+          
+      volumes:
+        - name: mysql-data-1
+          persistentVolumeClaim:
+            claimName: task-pv-claim-1 
+       
